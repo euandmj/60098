@@ -1,0 +1,16 @@
+<GameObjects>
+  <Entity>
+    <Ghost>
+      <Components>
+        <Position>0, 0, 0</Position>
+        <Geometry>Cube 1, 1, 1</Geometry>
+        <Velocity>0, 0, 0</Velocity>
+        <Collision>true</Collision>
+      </Components>
+      <Nodes>
+        0, 0
+        
+      </Nodes>
+    </Ghost>
+  </Entity>
+</GameObjects>

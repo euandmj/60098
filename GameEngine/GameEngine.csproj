@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D5DB5DD-71DB-46EB-A687-B3175CAC4AFD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameEngine</RootNamespace>
+    <AssemblyName>GameEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK">
+      <HintPath>..\..\..\acw\packages\OpenTK.2.0.0\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\ComponentAI.cs" />
+    <Compile Include="Components\ComponentAudio.cs" />
+    <Compile Include="Components\ComponentCollision.cs" />
+    <Compile Include="Components\ComponentGeometry.cs" />
+    <Compile Include="Components\ComponentMaterial.cs" />
+    <Compile Include="Components\ComponentPosition.cs" />
+    <Compile Include="Components\ComponentTexture.cs" />
+    <Compile Include="Components\ComponentTextureCubeMap.cs" />
+    <Compile Include="Components\ComponentVelocity.cs" />
+    <Compile Include="Components\IComponent.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Geometry\Cube.cs" />
+    <Compile Include="Geometry\Model.cs" />
+    <Compile Include="Geometry\Pyramid.cs" />
+    <Compile Include="Geometry\Shape.cs" />
+    <Compile Include="Geometry\Sphere.cs" />
+    <Compile Include="Geometry\WrappedTexCube.cs" />
+    <Compile Include="Managers\AIPathingManager.cs" />
+    <Compile Include="Managers\AIRespawnManager.cs" />
+    <Compile Include="Managers\CameraManager.cs" />
+    <Compile Include="Managers\EntityManager.cs" />
+    <Compile Include="Managers\ResourceManager.cs" />
+    <Compile Include="Managers\SystemManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenes\IScene.cs" />
+    <Compile Include="Systems\ISystem.cs" />
+    <Compile Include="Systems\SystemAudio.cs" />
+    <Compile Include="Systems\SystemCamera.cs" />
+    <Compile Include="Systems\SystemCollision.cs" />
+    <Compile Include="Systems\SystemPhysics.cs" />
+    <Compile Include="Systems\SystemRender.cs" />
+    <Compile Include="Utility\DataPipeline.cs" />
+    <Compile Include="Utility\GUI.cs" />
+    <Compile Include="Utility\Material.cs" />
+    <Compile Include="Utility\MaterialUtility.cs" />
+    <Compile Include="Utility\ModelUtility.cs" />
+    <Compile Include="Utility\PrimativeTypeUtility.cs" />
+    <Compile Include="Utility\ShaderUtility.cs" />
+    <Compile Include="Utility\Vec3Helper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Managers.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Geometry\CubeGeometry.txt" />
+    <Content Include="Geometry\SquareGeometry.txt" />
+    <Content Include="Geometry\TriangleGeometry.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
